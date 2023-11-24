@@ -41,14 +41,14 @@
                                                                       List of databases
    Name    |  Owner   | Encoding |  Collate   |   Ctype    |       Access privileges        |  Size   | Tablespace |                Description
 -----------+----------+----------+------------+------------+--------------------------------+---------+------------+--------------------------------------------
- postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |                                | 7977 kB | pg_default | default administrative connection database|
- template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres                   +| 7833 kB | pg_default | unmodifiable empty database               |
-           |          |          |            |            | postgres=CTc/postgres          |         |            |                                           |
- template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres                   +| 7833 kB | pg_default | default template for new databases        |
-           |          |          |            |            | postgres=CTc/postgres          |         |            |                                           |
- test_db   | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =Tc/postgres                  +| 8105 kB | pg_default |                                           |    
-           |          |          |            |            | postgres=CTc/postgres         +|         |            |                                           |
-           |          |          |            |            | "test-admin-user"=CTc/postgres |         |            |                                           | 
+|postgres  | postgres| UTF8     | en_US.utf8 | en_US.utf8 |                                | 7977 kB | pg_default | default administrative connection database|
+|template0 | postgres| UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres                   +| 7833 kB | pg_default | unmodifiable empty database               |
+|          |         |          |            |            | postgres=CTc/postgres          |         |            |                                           |
+|template1 | postgres| UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres                   +| 7833 kB | pg_default | default template for new databases        |
+|          |         |          |            |            | postgres=CTc/postgres          |         |            |                                           |
+|test_db   | postgres| UTF8     | en_US.utf8 | en_US.utf8 | =Tc/postgres                  +| 8105 kB | pg_default |                                           |    
+|          |         |          |            |            | postgres=CTc/postgres         +|         |            |                                           |
+|          |         |          |            |            | "test-admin-user"=CTc/postgres |         |            |                                           | 
 (4 rows)
 
 - описание таблиц (describe)
@@ -56,10 +56,10 @@
                                                                          Table "public.clients"
       Column       |          Type          | Collation | Nullable |                 Default                  | Storage  | Stats target | Description
 -------------------+------------------------+-----------+----------+------------------------------------------+----------+--------------+-------------
- id                | integer                |           | not null | nextval('clients_id_seq'::regclass)      | plain    |              |
- Фамилия           | character varying(100) |           |          |                                          | extended |              |
- Страна проживания | character varying(100) |           |          |                                          | extended |              |
- Заказ             | integer                |           | not null | nextval('"clients_Заказ_seq"'::regclass) | plain    |              |
+| id                | integer                |           | not null | nextval('clients_id_seq'::regclass)      | plain    |              |
+| Фамилия           | character varying(100) |           |          |                                          | extended |              |
+| Страна проживания | character varying(100) |           |          |                                          | extended |              |
+| Заказ             | integer                |           | not null | nextval('"clients_Заказ_seq"'::regclass) | plain    |              |             
 Indexes:
     "clients_pkey" PRIMARY KEY, btree (id)
 Foreign-key constraints:
@@ -69,9 +69,9 @@ Access method: heap
                                                            Table "public.orders"
     Column    |          Type          | Collation | Nullable |              Default               | Storage  | Stats target | Description
 --------------+------------------------+-----------+----------+------------------------------------+----------+--------------+-------------
- id           | integer                |           | not null | nextval('orders_id_seq'::regclass) | plain    |              |
- Наименование | character varying(100) |           |          |                                    | extended |              |
- Цена         | integer                |           |          |                                    | plain    |              |
+| id           | integer                |           | not null | nextval('orders_id_seq'::regclass) | plain    |              |
+| Наименование | character varying(100) |           |          |                                    | extended |              |
+| Цена         | integer                |           |          |                                    | plain    |              |
 Indexes:
     "orders_pkey" PRIMARY KEY, btree (id)
 Referenced by:
@@ -82,14 +82,14 @@ Access method: heap
 
 grantor  |     grantee      | table_catalog | table_schema | table_name | privilege_type | is_grantable | with_hierarchy
 ----------+------------------+---------------+--------------+------------+----------------+--------------+----------------
- postgres | test-simple-user | test_db       | public       | orders     | INSERT         | NO           | NO
- postgres | test-simple-user | test_db       | public       | orders     | SELECT         | NO           | YES
- postgres | test-simple-user | test_db       | public       | orders     | UPDATE         | NO           | NO
- postgres | test-simple-user | test_db       | public       | orders     | DELETE         | NO           | NO
- postgres | test-simple-user | test_db       | public       | clients    | INSERT         | NO           | NO
- postgres | test-simple-user | test_db       | public       | clients    | SELECT         | NO           | YES
- postgres | test-simple-user | test_db       | public       | clients    | UPDATE         | NO           | NO
- postgres | test-simple-user | test_db       | public       | clients    | DELETE         | NO           | NO
+| postgres | test-simple-user | test_db       | public       | orders     | INSERT         | NO           | NO
+| postgres | test-simple-user | test_db       | public       | orders     | SELECT         | NO           | YES
+| postgres | test-simple-user | test_db       | public       | orders     | UPDATE         | NO           | NO
+| postgres | test-simple-user | test_db       | public       | orders     | DELETE         | NO           | NO
+| postgres | test-simple-user | test_db       | public       | clients    | INSERT         | NO           | NO
+| postgres | test-simple-user | test_db       | public       | clients    | SELECT         | NO           | YES
+| postgres | test-simple-user | test_db       | public       | clients    | UPDATE         | NO           | NO
+| postgres | test-simple-user | test_db       | public       | clients    | DELETE         | NO           | NO
 (8 rows)
 
 - список пользователей с правами над таблицами test_db
