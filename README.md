@@ -36,20 +36,19 @@
 - список пользователей с правами над таблицами test_db
 
 ## Ответ:
-
 - Итоговый список БД после выполнения пунктов выше
 
                                                                       List of databases
    Name    |  Owner   | Encoding |  Collate   |   Ctype    |       Access privileges        |  Size   | Tablespace |                Description
 -----------+----------+----------+------------+------------+--------------------------------+---------+------------+--------------------------------------------
- postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |                                | 7977 kB | pg_default | default administrative connection database
- template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres                   +| 7833 kB | pg_default | unmodifiable empty database
-           |          |          |            |            | postgres=CTc/postgres          |         |            |
- template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres                   +| 7833 kB | pg_default | default template for new databases
-           |          |          |            |            | postgres=CTc/postgres          |         |            |
- test_db   | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =Tc/postgres                  +| 8105 kB | pg_default |
-           |          |          |            |            | postgres=CTc/postgres         +|         |            |
-           |          |          |            |            | "test-admin-user"=CTc/postgres |         |            |
+ postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |                                | 7977 kB | pg_default | default administrative connection database|
+ template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres                   +| 7833 kB | pg_default | unmodifiable empty database               |
+           |          |          |            |            | postgres=CTc/postgres          |         |            |                                           |
+ template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres                   +| 7833 kB | pg_default | default template for new databases        |
+           |          |          |            |            | postgres=CTc/postgres          |         |            |                                           |
+ test_db   | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =Tc/postgres                  +| 8105 kB | pg_default |                                           |    
+           |          |          |            |            | postgres=CTc/postgres         +|         |            |                                           |
+           |          |          |            |            | "test-admin-user"=CTc/postgres |         |            |                                           | 
 (4 rows)
 
 - описание таблиц (describe)
@@ -123,4 +122,3 @@ grantor  |     grantee      | table_catalog | table_schema | table_name | privil
  test-simple-user | UPDATE
  test-simple-user | DELETE
 
- 
