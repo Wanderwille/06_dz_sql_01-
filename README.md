@@ -96,29 +96,30 @@ Access method: heap
 
 Таблица Orders:
 
-| postgres         | INSERT|
-| postgres         | SELECT|
-| postgres         | UPDATE|
-| postgres         | DELETE|
-| postgres         | TRUNCATE|
-| postgres         | REFERENCES|
-| postgres         | TRIGGER|
-| test-simple-user | INSERT|
-| test-simple-user | SELECT|
-| test-simple-user | UPDATE|
-| test-simple-user | DELETE|
+| postgres         | INSERT |
+| postgres         | SELECT |
+| postgres         | UPDATE |
+| postgres         | DELETE |
+| postgres         | TRUNCATE |
+| postgres         | REFERENCES |
+| postgres         | TRIGGER |
+| test-simple-user | INSERT |
+| test-simple-user | SELECT |
+| test-simple-user | UPDATE |
+| test-simple-user | DELETE |
 
 Таблица Clients:
-
-| postgres         | INSERT|
-| postgres         | SELECT|
-| postgres         | UPDATE|
-| postgres         | DELETE|
-| postgres         | TRUNCATE|
+| Grantor          | Privilege |
+|------------------|-----------|
+| postgres         | INSERT    |
+| postgres         | SELECT    |
+| postgres         | UPDATE    |
+| postgres         | DELETE    |
+| postgres         | TRUNCATE  |
 | postgres         | REFERENCES|
-| postgres         | TRIGGER|
-| test-simple-user | INSERT|
-| test-simple-user | SELECT|
-| test-simple-user | UPDATE|
-| test-simple-user | DELETE|
+| postgres         | TRIGGER   |
+| test-simple-user | INSERT    |
+| test-simple-user | SELECT    |
+| test-simple-user | UPDATE    |
+| test-simple-user | DELETE    |
 
