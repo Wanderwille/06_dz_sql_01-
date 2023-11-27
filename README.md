@@ -287,3 +287,45 @@ cost=14.00..14.00 rows=319 width=222: Это создание хеша для с
 
 Execution Time: 0.041 ms - Время выполнения запроса. 
 
+## Задача 6 
+
+Создайте бэкап БД test_db и поместите его в volume, предназначенный для бэкапов (см. Задачу 1).
+
+Остановите контейнер с PostgreSQL (но не удаляйте volumes).
+
+Поднимите новый пустой контейнер с PostgreSQL.
+
+Восстановите БД test_db в новом контейнере.
+
+Приведите список операций, который вы применяли для бэкапа данных и восстановления. 
+
+## Ответ:
+
+Был использован docker compose
+
+## Команды:
+
+`pg_dump -U postgres -O -F p -C test_db > /backups/test_db_backup.bak`
+
+docker compose down
+
+docker-compose up -d --scale postgresSQL=2
+
+docker exec -it 4b90e4729ccc bash
+
+psql -U postgres   
+
+CREATE DATABASE "test_db_backup" OWNER=postgres;  
+
+\q  
+
+psql -U postgres test_db_backup < /backups/test_db_backup.bak  
+
+psql -U postgres test_db_backup  
+
+SELECT COUNT(*) FROM public.clients; 
+
+| count   |
+| ------- |
+|      5  |  
+| (1 row) |
